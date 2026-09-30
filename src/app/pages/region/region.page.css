@@ -1,0 +1,17 @@
+/* Quick-actions (Highlights/Search) as a row of chips above the content */
+.floating-action-area.is_in-page {
+  float: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.5rem;
+
+  br {
+    display: none;
+  }
+  .action {
+    margin: 0;
+  }
+}
