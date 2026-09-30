@@ -21,14 +21,6 @@ Possible to override via the `theme/overrides.css`-file (set before/during build
 */
 :root {
   /* 121 Design System: Primitives */
-  --hia_121_purple-50: #f3f0ff;
-  --hia_121_purple-100: #eeebff;
-  --hia_121_purple-300: #d0c0ff;
-  --hia_121_purple-500: #ad92fe;
-  --hia_121_purple-600: #5a32fd;
-  --hia_121_purple-700: #4f22d7;
-  --hia_121_purple-900: #361a8c;
-  --hia_121_navy-900: #00214d;
   --hia_121_neutral-0: #ffffff;
   --hia_121_neutral-50: #f6f8fa;
   --hia_121_neutral-100: #ecf0f4;
@@ -74,10 +66,10 @@ Possible to override via the `theme/overrides.css`-file (set before/during build
 
   Colors - Theme (named colors): */
   --hia_color_light-grey: var(--hia_121_neutral-50);
-  --hia_color_navy: var(--hia_121_navy-900);
+  --hia_color_dark-navy: #011e41;
+  --hia_color_navy: var(--hia_color_dark-navy);
   --hia_color_ink: var(--hia_121_neutral-900);
   --hia_color_white: var(--hia_121_neutral-0);
-  --hia_color_purple: var(--hia_121_purple-700);
 
   --hia_style_shadow:
     0 1px 2px 0 rgba(15, 18, 24, 0.04), 0 4px 14px 0 rgba(15, 18, 24, 0.06);
@@ -106,7 +98,7 @@ Possible to override via the `theme/overrides.css`-file (set before/during build
   --hia_level_shadow: var(--env_hia_level_shadow, var(--hia_style_shadow));
 
   /* Colors - Function: Accent (primary actions, links, focus) */
-  --hia_accent: var(--env_hia_accent, var(--hia_color_purple));
+  --hia_accent: var(--env_hia_accent, var(--hia_color_dark-navy));
   --hia_accent_text: var(--env_hia_accent_text, var(--hia_color_white));
   --hia_accent_subtle: color-mix(
     in srgb,
@@ -285,7 +277,7 @@ details summary {
 }
 
 ::selection {
-  background-color: var(--hia_121_purple-100);
+  background-color: color-mix(in srgb, var(--hia_accent) 15%, transparent);
 }
 
 @media (prefers-reduced-motion: reduce) {
